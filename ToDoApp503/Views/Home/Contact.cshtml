@@ -1,0 +1,23 @@
+﻿@model ToDoApp503.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+}
+<style>
+    td
+    {
+        padding:3px!important;
+    }
+</style>
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+    <table>
+        <tr>
+            <td>Adı:</td>
+            <td>{@Html.EditorFor(model => model.FirstName,new {htmlAttributes=new {@class="form-control" }})@Html.ValidationMessageFor(model=>model.FirstName)</td>
+
+        </tr>
+    </table>
+}
